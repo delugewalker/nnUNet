@@ -12,6 +12,8 @@
 #    See the License for the specific language governing permissions and
 #    limitations under the License.
 
+import sys
+sys.path.append("/workspace/Study/nnUNet-master/")    # 添加nnUNet的绝对目录到环境变量中
 
 import numpy as np
 from collections import OrderedDict
@@ -48,7 +50,7 @@ if __name__ == "__main__":
     """
 
     task_name = "Task043_BraTS2019"
-    downloaded_data_dir = "/home/sdp/MLPERF/Brats2019_DATA/MICCAI_BraTS_2019_Data_Training"
+    Train_data_dir = "/workspace/Datasets/BraTS2019/Train/"
 
     target_base = join(nnUNet_raw_data, task_name)
     target_imagesTr = join(target_base, "imagesTr")
@@ -63,7 +65,7 @@ if __name__ == "__main__":
 
     patient_names = []
     for tpe in ["HGG", "LGG"]:
-        cur = join(downloaded_data_dir, tpe)
+        cur = join(Train_data_dir, tpe)
         for p in subdirs(cur, join=False):
             patdir = join(cur, p)
             patient_name = tpe + "__" + p
@@ -117,10 +119,10 @@ if __name__ == "__main__":
 
     save_json(json_dict, join(target_base, "dataset.json"))
 
-    downloaded_data_dir = "/home/sdp/MLPERF/Brats2019_DATA/MICCAI_BraTS_2019_Data_Validation"
+    Validation_data_dir = "/workspace/Datasets/BraTS2019/Valid/"
 
-    for p in subdirs(downloaded_data_dir, join=False):
-        patdir = join(downloaded_data_dir, p)
+    for p in subdirs(Validation_data_dir, join=False):
+        patdir = join(Validation_data_dir, p)
         patient_name = p
         t1 = join(patdir, p + "_t1.nii.gz")
         t1c = join(patdir, p + "_t1ce.nii.gz")

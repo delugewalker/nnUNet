@@ -626,8 +626,8 @@ if __name__ == "__main__":
     """
 
     task_name = "Task082_BraTS2020"
-    downloaded_data_dir = "/home/fabian/Downloads/MICCAI_BraTS2020_TrainingData"
-    downloaded_data_dir_val = "/home/fabian/Downloads/MICCAI_BraTS2020_ValidationData"
+    downloaded_data_dir = "/workspace/Datasets/BraTS2020/MICCAI_BraTS2020_TrainingData"
+    downloaded_data_dir_val = "/workspace/Datasets/BraTS2020/MICCAI_BraTS2020_ValidationData"
 
     target_base = join(nnUNet_raw_data, task_name)
     target_imagesTr = join(target_base, "imagesTr")
