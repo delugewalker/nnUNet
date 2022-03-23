@@ -6,7 +6,7 @@ import numpy as np
 
 # pkl_path = '/workspace/Datasets/nnUNet/nnUNet_cropped_data/Task082_BraTS2020/'  # 裁剪后的数据信息
 pkl_path = '/workspace/Datasets/nnUNet/nnUNet_preprocessed_data/Task082_BraTS2020/nnUNetData_plans_v2.1_stage0/BraTS20_Training_001.pkl'  # 数据预处理后的数据信息
-pkl_path = '/workspace/Datasets/nnUNet/nnUNet_preprocessed_data/Task082_BraTS2020/dataset_properties.pkl'  # dataset_properties.pkl路径
+# pkl_path = '/workspace/Datasets/nnUNet/nnUNet_preprocessed_data/Task082_BraTS2020/dataset_properties.pkl'  # dataset_properties.pkl路径
 pkl_name = 'BraTS20_Training_001.pkl'
 pkl_file = os.path.join(pkl_path, pkl_name)
 plans = pickle.load(open(pkl_path, 'rb'), encoding='utf-8')
